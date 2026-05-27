@@ -1,12 +1,9 @@
 {
-  "name": "Claude Code Usage",
-  "description": "Display Claude Code usage in the top panel. This extension uses anthropic.com services. This extension is not affiliated, funded, or in any way associated with Claude.",
-  "uuid": "claude-code-usage@haletran.com",
+  "name": "Claude Code Usage (themed)",
+  "description": "Display Claude Code usage in the top panel with color-coded % and bar (green/yellow/orange/red). Themed fork of Haletran/claude-usage-extension. This extension uses anthropic.com services. Not affiliated with Claude or Anthropic.",
+  "uuid": "claude-code-usage-themed@thanakon228.github.com",
   "shell-version": ["46", "47", "48", "49"],
-  "url": "https://github.com/Haletran/claude-usage-extension",
-  "settings-schema": "org.gnome.shell.extensions.claude-code-usage",
-  "donations": {
-    "github": "Haletran"
-  },
-  "version": 3
+  "url": "https://github.com/thanakon228/claude-code-usage-gnome",
+  "settings-schema": "org.gnome.shell.extensions.claude-code-usage-themed",
+  "version": 1
 }
