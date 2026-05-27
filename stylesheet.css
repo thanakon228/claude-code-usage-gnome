@@ -8,6 +8,22 @@
     font-weight: bold;
 }
 
+.claude-usage-label.usage-low {
+    color: #22c55e;
+}
+
+.claude-usage-label.usage-medium {
+    color: #eab308;
+}
+
+.claude-usage-label.usage-high {
+    color: #f97316;
+}
+
+.claude-usage-label.usage-critical {
+    color: #ef4444;
+}
+
 /* Panel progress bar */
 .claude-panel-progress-bg {
     background-color: rgba(255, 255, 255, 0.2);
@@ -22,6 +38,22 @@
     border-radius: 3px;
     transition: width 300ms ease-out;
     background-color: #ffffff;
+}
+
+.claude-panel-progress-bar.usage-low {
+    background-color: #22c55e;
+}
+
+.claude-panel-progress-bar.usage-medium {
+    background-color: #eab308;
+}
+
+.claude-panel-progress-bar.usage-high {
+    background-color: #f97316;
+}
+
+.claude-panel-progress-bar.usage-critical {
+    background-color: #ef4444;
 }
 
 /* Usage section styles */

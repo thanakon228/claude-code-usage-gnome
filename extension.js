@@ -328,6 +328,7 @@ class ClaudeUsageIndicator extends PanelMenu.Button {
         const sevenDay = data.seven_day?.utilization ?? 0;
 
         this._label.set_text(`${Math.round(fiveHour)}%`);
+        this._updateLabelClass(fiveHour);
 
         this._updatePanelProgressBar(fiveHour);
 
@@ -350,10 +351,42 @@ class ClaudeUsageIndicator extends PanelMenu.Button {
         }
     }
 
+    _updateLabelClass(usage) {
+        this._label.remove_style_class_name('usage-low');
+        this._label.remove_style_class_name('usage-medium');
+        this._label.remove_style_class_name('usage-high');
+        this._label.remove_style_class_name('usage-critical');
+
+        if (usage >= 90) {
+            this._label.add_style_class_name('usage-critical');
+        } else if (usage >= 70) {
+            this._label.add_style_class_name('usage-high');
+        } else if (usage >= 40) {
+            this._label.add_style_class_name('usage-medium');
+        } else {
+            this._label.add_style_class_name('usage-low');
+        }
+    }
+
     _updatePanelProgressBar(usage) {
         const maxWidth = 50;
         const width = Math.round((Math.min(100, Math.max(0, usage)) / 100) * maxWidth);
         this._panelProgressBar.set_width(width);
+
+        this._panelProgressBar.remove_style_class_name('usage-low');
+        this._panelProgressBar.remove_style_class_name('usage-medium');
+        this._panelProgressBar.remove_style_class_name('usage-high');
+        this._panelProgressBar.remove_style_class_name('usage-critical');
+
+        if (usage >= 90) {
+            this._panelProgressBar.add_style_class_name('usage-critical');
+        } else if (usage >= 70) {
+            this._panelProgressBar.add_style_class_name('usage-high');
+        } else if (usage >= 40) {
+            this._panelProgressBar.add_style_class_name('usage-medium');
+        } else {
+            this._panelProgressBar.add_style_class_name('usage-low');
+        }
     }
 
     _updateProgressBar(progressBar, usage) {
